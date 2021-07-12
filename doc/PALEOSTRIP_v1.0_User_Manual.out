@@ -1,0 +1,34 @@
+\BOOKMARK [0][-]{chapter.1}{Before starting}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Acknowledgements}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{License}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{PALEOSTRIP design philosophy}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.4}{PALEOSTRIP: what it does and does not do}{chapter.1}% 5
+\BOOKMARK [0][-]{chapter.2}{Getting started}{}% 6
+\BOOKMARK [1][-]{section.2.1}{Requirements}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.2}{Download \046 Install}{chapter.2}% 8
+\BOOKMARK [2][-]{subsection.2.2.1}{Get PALEOSTRIP}{section.2.2}% 9
+\BOOKMARK [2][-]{subsection.2.2.2}{PALEOSTRIP directories}{section.2.2}% 10
+\BOOKMARK [2][-]{subsection.2.2.3}{Run PALEOSTRIP}{section.2.2}% 11
+\BOOKMARK [1][-]{section.2.3}{PALEOSTRIP GUI options}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.3.1}{Import data}{section.2.3}% 13
+\BOOKMARK [2][-]{subsection.2.3.2}{Isostasy}{section.2.3}% 14
+\BOOKMARK [2][-]{subsection.2.3.3}{Thermal Subsidence}{section.2.3}% 15
+\BOOKMARK [2][-]{subsection.2.3.4}{Sea Level correction}{section.2.3}% 16
+\BOOKMARK [2][-]{subsection.2.3.5}{Dynamic topography}{section.2.3}% 17
+\BOOKMARK [2][-]{subsection.2.3.6}{Log file}{section.2.3}% 18
+\BOOKMARK [1][-]{section.2.4}{Running examples}{chapter.2}% 19
+\BOOKMARK [1][-]{section.2.5}{Plot outputs}{chapter.2}% 20
+\BOOKMARK [1][-]{section.2.6}{Save outputs}{chapter.2}% 21
+\BOOKMARK [1][-]{section.2.7}{Extract 2D sections and wells from backtracked outputs}{chapter.2}% 22
+\BOOKMARK [0][-]{chapter.3}{Pre-processing of user-based data}{}% 23
+\BOOKMARK [1][-]{section.3.1}{Geographical coordinates}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.2}{Files format}{chapter.3}% 25
+\BOOKMARK [2][-]{subsection.3.2.1}{1D: wells}{section.3.2}% 26
+\BOOKMARK [2][-]{subsection.3.2.2}{2D: transect}{section.3.2}% 27
+\BOOKMARK [2][-]{subsection.3.2.3}{3D: maps}{section.3.2}% 28
+\BOOKMARK [2][-]{subsection.3.2.4}{Lithological parameters}{section.3.2}% 29
+\BOOKMARK [2][-]{subsection.3.2.5}{Files name and numbering}{section.3.2}% 30
+\BOOKMARK [0][-]{chapter.4}{Appendix A}{}% 31
+\BOOKMARK [1][-]{section.4.1}{1D well}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.2}{2D transect}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.3}{3D maps}{chapter.4}% 34
