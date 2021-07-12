@@ -1,0 +1,40 @@
+------------------=------------------
+=PALEOSTRIP PARAMETERS LOG= 
+------------------=------------------
+Grid dimension
+=
+3D
+------------------=------------------
+Astenosphere_density
+=
+3300.
+Crustal density=2800.
+Sea water density=1030.
+------------------=------------------
+Isostasy=Yes
+Isostasy=Flexure (Finite Difference)
+Eff. Elastic Thick.=Variable
+Eff. Elastic Thick.=User provided file
+Eff. Elastic Thick.=/Users/flo/Recherche/MODELS/Github/paleostrip_examples/RSU4_Ross_full_march_2020/Variable_Te_Chen_et_al_2018/EET-c37lim_Ross_Sea_Chen_et_al_2018.dat
+Young modulus=70000000000
+Poisson Ratio=0.25
+------------------=------------------
+Sea Level=Yes
+Sea Level=Miller
+------------------=------------------
+Thermal Subsidence=Yes
+Age of rift (Ma)=76
+Initial litho. thickness (km)=125
+Initial crustal thickness (km)=35
+Thermal diffusion coefficient (m2/s)=3.45e-05
+Thermal expansion coeff. (1/C°)=7.8e-07
+Beta factor=Uniform
+Beta factor 1=2.3
+------------------=------------------
+Dynamic Topography=Yes
+Dynamic Topography=model
+Dynamic Topography=2D/3D
+Dynamic Topography=/Users/flo/Recherche/MODELS/Github/paleostrip_examples/RSU4_Ross_full_march_2020/Dynamic_Topo_Muller_et_al_2018/Antar_dyn_topo.txt
+------------------=------------------
+=END OF LOG= 
+------------------=------------------

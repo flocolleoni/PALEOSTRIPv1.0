@@ -24,7 +24,7 @@
 % - for 3D backtracking: plot with plain map view or real 3D visual effect
 %
 %-----------------------------------------------------------------------------------
-function Plot_Init(M,grid_opt,plot_init,maps_plot,plot_min,plot_max,plot_levels,profiles,depth,EET_init,SL_init,DynTopo_init,betaF)
+function Plot_Init(M,grid_opt,plot_init,maps_plot,plot_min,plot_max,palette,palette_FUD,plot_levels,profiles,depth,EET_init,SL_init,DynTopo_init,betaF)
 
 
 
@@ -69,6 +69,58 @@ if (plot_levels == 1)
     ZMAX = plot_max;
 end
 
+
+% COLORMAPS
+
+ colorpath=what('./auxiliary/plot_save/ScientificColourMaps7'); %path to color-blind friendly palettes
+
+ %colormap(bam.bamO)
+
+if (palette == 1) % hsv
+    colorpal='hsv';
+elseif (palette == 2) % parula
+    colorpal='parula';
+elseif (palette == 3) % jet
+    colorpal='jet';
+elseif (palette == 4) % bam
+    fullcolor=fullfile(colorpath.path,'bamO.mat');
+    bam=load(fullcolor);
+    colorpal=bam.bamO;    
+elseif (palette == 5) % broc
+    fullcolor=fullfile(colorpath.path,'brocO.mat');
+    broc=load(fullcolor);
+    colorpal=broc.brocO;
+elseif (palette == 6) % cork 
+    fullcolor=fullfile(colorpath.path,'corkO.mat');
+    cork=load(fullcolor);
+    colorpal=cork.corkO;
+elseif (palette == 7) % roma
+    fullcolor=fullfile(colorpath.path,'romaO.mat');
+    roma=load(fullcolor);
+    colorpal=roma.romaO;
+elseif (palette == 8) % vik
+    fullcolor=fullfile(colorpath.path,'vikO.mat');
+    vik=load(fullcolor);
+    colorpal=vik.vikO;
+elseif (palette == 9) % hawai
+    fullcolor=fullfile(colorpath.path,'hawaii.mat');
+    hawai=load(fullcolor);
+    colorpal=hawai.hawaii;
+elseif (palette == 10) % lisbon
+    fullcolor=fullfile(colorpath.path,'lisbon.mat');
+    lisbonc=load(fullcolor);
+    colorpal=lisbonc.lisbon;
+elseif (palette == 11) % hawai
+    fullcolor=fullfile(colorpath.path,'tofino.mat');
+    tofinoc=load(fullcolor);
+    colorpal=tofinoc.tofino;
+elseif (palette == 12) % oleron
+    fullcolor=fullfile(colorpath.path,'oleron.mat');
+    oleronc=load(fullcolor);
+    colorpal=oleronc.oleron;
+end
+
+
 %INITIALISE FIGURE ARRAY
  vhnd=[];
  try
@@ -102,7 +154,11 @@ for ii=1:IMAX
        camlight(-61,43);
      end
 
-     colormap(flipud(hsv));
+     if (palette_FUD == 0)
+        colormap(colorpal)
+     else
+        colormap(flipud(colorpal))
+     end
      caxis([ZMIN ZMAX]); %-4000 --> ZMIN
      cb=colorbar;
      cb.Label.String = 'Depth (m)';
@@ -138,7 +194,11 @@ for ii=1:IMAX
        camlight(-61,43);
      end
 
-     colormap parula;
+     if (palette_FUD == 0)
+        colormap(colorpal)
+     else
+        colormap(flipud(colorpal))
+     end
 
      cb=colorbar;
      cb.Label.String = 'Sea Level correction (m)';
@@ -177,7 +237,11 @@ for ii=1:IMAX
        camlight(-61,43);
      end
 
-     colormap parula;
+     if (palette_FUD == 0)
+        colormap(colorpal)
+     else
+        colormap(flipud(colorpal))
+     end
 
      cb=colorbar;
      cb.Label.String = 'Dyn. Topo. correction (m)';
@@ -217,7 +281,11 @@ end
        material dull;
      end
      
-     colormap jet;
+     if (palette_FUD == 0)
+        colormap(colorpal)
+     else
+        colormap(flipud(colorpal))
+     end
      cb=colorbar; hold on
      cb.Label.String = 'EET (m)';
      
@@ -256,7 +324,11 @@ end
        material dull;
      end
 
-     colormap jet;
+     if (palette_FUD == 0)
+        colormap(colorpal)
+     else
+        colormap(flipud(colorpal))
+     end
      cb=colorbar; hold on
      cb.Label.String = 'Beta factor (-)';
      if (ZMIN ~= ZMAX)

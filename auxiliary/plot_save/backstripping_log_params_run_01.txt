@@ -1,0 +1,35 @@
+------------------=------------------
+=PALEOSTRIP PARAMETERS LOG= 
+------------------=------------------
+Grid dimension
+=
+3D
+------------------=------------------
+Astenosphere_density
+=
+3300.
+Crustal density=2800.
+Sea water density=1030.
+------------------=------------------
+Isostasy=Yes
+Isostasy=Flexure (Green function)
+Eff. Elastic Thick.=Uniform
+Eff. Elastic Thick.=30
+Young modulus=70000000000
+Poisson Ratio=0.25
+------------------=------------------
+Sea Level=No
+------------------=------------------
+Thermal Subsidence=Yes
+Age of rift (Ma)=76
+Initial litho. thickness (km)=125
+Initial crustal thickness (km)=35
+Thermal diffusion coefficient (m2/s)=3.45e-05
+Thermal expansion coeff. (1/C°)=7.8e-07
+Beta factor=Uniform
+Beta factor 1=2.1
+------------------=------------------
+Dynamic Topography=No
+------------------=------------------
+=END OF LOG= 
+------------------=------------------

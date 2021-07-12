@@ -25,7 +25,7 @@
 %
 %-----------------------------------------------------------------------------------
 
-function Plot_Results(M,grid_opt,plot_menu,maps_plot,plot_min,plot_max,plot_levels,profiles,profiles_min,profiles_max,isopachs,isopachs_min,isopachs_max,...
+function Plot_Results(M,grid_opt,plot_menu,maps_plot,plot_min,plot_max,palette,palette_FUD,plot_levels,profiles,profiles_min,profiles_max,isopachs,isopachs_min,isopachs_max,...
                 density,density_min,density_max,porosity,porosity_min,porosity_max,tsubs_corr,tsubs_min,...
                 tsubs_max,isostasy,isostasy_min,isostasy_max,tectonic,tectonic_min,tectonic_max)
 
@@ -80,6 +80,55 @@ if plot_levels == 1
     ZMAX = plot_max;
 end
 
+% COLORMAPS
+
+ colorpath=what('./auxiliary/plot_save/ScientificColourMaps7'); %path to color-blind friendly palettes
+
+if (palette == 1) % hsv
+    colorpal='hsv';
+elseif (palette == 2) % parula
+    colorpal='parula';
+elseif (palette == 3) % jet
+    colorpal='jet';
+elseif (palette == 4) % bam
+    fullcolor=fullfile(colorpath.path,'bamO.mat');
+    bam=load(fullcolor);
+    colorpal=bam.bamO;    
+elseif (palette == 5) % broc
+    fullcolor=fullfile(colorpath.path,'brocO.mat');
+    broc=load(fullcolor);
+    colorpal=broc.brocO;
+elseif (palette == 6) % cork 
+    fullcolor=fullfile(colorpath.path,'corkO.mat');
+    cork=load(fullcolor);
+    colorpal=cork.corkO;
+elseif (palette == 7) % roma
+    fullcolor=fullfile(colorpath.path,'romaO.mat');
+    roma=load(fullcolor);
+    colorpal=roma.romaO;
+elseif (palette == 8) % vik
+    fullcolor=fullfile(colorpath.path,'vikO.mat');
+    vik=load(fullcolor);
+    colorpal=vik.vikO;
+elseif (palette == 9) % hawai
+    fullcolor=fullfile(colorpath.path,'hawaii.mat');
+    hawai=load(fullcolor);
+    colorpal=hawai.hawaii;
+elseif (palette == 10) % lisbon
+    fullcolor=fullfile(colorpath.path,'lisbon.mat');
+    lisbonc=load(fullcolor);
+    colorpal=lisbonc.lisbon;
+elseif (palette == 11) % tofino
+    fullcolor=fullfile(colorpath.path,'tofino.mat');
+    tofinoc=load(fullcolor);
+    colorpal=tofinoc.tofino;
+elseif (palette == 12) % oleron
+    fullcolor=fullfile(colorpath.path,'oleron.mat');
+    oleronc=load(fullcolor);
+    colorpal=oleronc.oleron;
+end
+
+
 %INITIALISE FIGURES ARRAY
  vhnd=[];
  try
@@ -112,8 +161,12 @@ for ii=1:IMAX
      else               % Real 3D maps
        camlight(-61,43);
      end
-
-     colormap(flipud(hsv));
+     
+     if (palette_FUD == 0)
+        colormap(colorpal)
+     else
+        colormap(flipud(colorpal))
+     end
      caxis([ZMIN ZMAX]);
      cb=colorbar;
      cb.Label.String = 'Elevation (m)';
@@ -150,7 +203,11 @@ for ii=1:IMAX
        material dull;
      end
 
-     colormap parula;
+     if (palette_FUD == 0)
+        colormap(colorpal)
+     else
+        colormap(flipud(colorpal))
+     end
      caxis([ZMIN ZMAX]);
      cb=colorbar;
      cb.Label.String = 'Sediment thickness (m)';
@@ -187,7 +244,11 @@ for ii=1:IMAX
        material dull;
      end
 
-     colormap jet;
+     if (palette_FUD == 0)
+        colormap(colorpal)
+     else
+        colormap(flipud(colorpal))
+     end
      caxis([1800 ZMAX]);
      cb=colorbar;
      cb.Label.String = 'Density (kg/m3)';
@@ -224,7 +285,11 @@ for ii=1:IMAX
        material dull;
      end
 
-     colormap jet;
+     if (palette_FUD == 0)
+        colormap(colorpal)
+     else
+        colormap(flipud(colorpal))
+     end
      caxis([ZMIN ZMAX]);
      cb=colorbar;
      cb.Label.String = 'Porosity (%)';
@@ -262,7 +327,11 @@ for ii=1:IMAX
        material dull;
      end
 
-     colormap jet;
+     if (palette_FUD == 0)
+        colormap(colorpal)
+     else
+        colormap(flipud(colorpal))
+     end
      caxis([ZMIN ZMAX]);
      cb=colorbar;
      cb.Label.String = 'Isostasy (m)';
@@ -299,7 +368,11 @@ elseif (plot_menu == 6) %,'Thermal Subsidence'
        material dull;
      end
      
-     colormap jet;
+     if (palette_FUD == 0)
+        colormap(colorpal)
+     else
+        colormap(flipud(colorpal))
+     end
      caxis([ZMIN ZMAX]);
      cb=colorbar;
      cb.Label.String = 'Thermal subsidence correction (m)';
@@ -334,7 +407,11 @@ elseif (plot_menu == 8) %,'Tectonic Subsidence of Basement'
        material dull;
      end
      
-     colormap jet;
+     if (palette_FUD == 0)
+        colormap(colorpal)
+     else
+        colormap(flipud(colorpal))
+     end
      caxis([ZMIN ZMAX]);
      cb=colorbar;
      cb.Label.String = 'Tectonic subsidence (m)';

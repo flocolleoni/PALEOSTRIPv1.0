@@ -68,7 +68,7 @@ function [dSL_iso]=Iso_water_load(Np,N,Xcoord,Ycoord,opt_sl,SL,iso_opt,grid_opt,
             
             % Check on Te option
             if (EET_opt == 1) % Variable Te                                                 
-                [EET_1d]=read_EET_3d(EETfile,EETdir);
+                [EET_1d]=read_EET_data(EETfile,EETdir);
                 EET_out(1:Np) = EET_1d(:);
             else % Spatially uniform Te
                 EET_1d(1:Np)=EET;
@@ -116,7 +116,7 @@ function [dSL_iso]=Iso_water_load(Np,N,Xcoord,Ycoord,opt_sl,SL,iso_opt,grid_opt,
               %%%%%%%% Effective Elastic Thickness %%%%%%%%%%%%%%%%%
               %Interpolate variable EET on the data grid & CREATE MESH and get 1D vector from 2D new matrix
               if (EET_opt == 1) % Variable EET (N. Cardozo - fled3dv code)
-                [EET, Xeet,Yeet,outputstring]=read_EET_3d(EETfile,EETdir);
+                [EET, Xeet,Yeet,outputstring]=read_EET_data(EETfile,EETdir);
                 [EET_1d,EET_out]=mesh3D_eet(Xcoord,Ycoord,Xeet,Yeet,EET);
                  
               end

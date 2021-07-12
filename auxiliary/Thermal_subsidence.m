@@ -135,7 +135,7 @@ if (opt_subs == 1) % THERMAL SUBSIDENCE ON
 % Remode present-day value and add interpolated subsidence at horizon ages
   for t=1:N
          
-     if (thzages(t) < rift) % Post rift
+     if (thzages(t) > rift) % Post rift
        for k=1:Np
           ts_corr(k,t) = tsubs(k,N-t+1)-tsubs(k,NN);
        end
